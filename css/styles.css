@@ -11,6 +11,8 @@
     --light-mode-backgrounds: #F4F4FD;
 
     --card-set-gap: 24px;
+
+    --shadow-img: linear-gradient(to top, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7));
 }
 
 /* =========== global tags style =========== */
@@ -54,6 +56,10 @@ body {
 
 .list {
     list-style: none;
+}
+
+.svg-icon-white {
+    fill: var(--default-bg-color)
 }
 
 .visually-hidden {
@@ -136,12 +142,7 @@ body {
 .header-link:focus,
 .header-contact:hover,
 .header-contact:focus {
-    color: var(--primary-text-color)
-}
-
-.header-link:active,
-.header-contact:active {
-    color: var(--primary-brand-color)
+    color: var(--primary-brand-color);
 }
 
 .header-list {
@@ -166,16 +167,20 @@ body {
 
 /* =========== hero =========== */
 .hero {
+    padding-top: 192px;
+    padding-bottom: 192px;
+    max-width: 1440px;
+    margin: 0 auto;
 
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
     background: var(--dark-navy-blue);
     text-align: center;
-}
 
-.hero .container {
-    padding-top: 192px;
-    padding-bottom: 192px;
+    background-image: var(--shadow-img), url(../images/people-office.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-origin: padding-box;
 }
 
 .hero-title {
@@ -219,7 +224,7 @@ body {
 
 /* =========== Our skills =========== */
 
-.skills .container {
+.skills {
     padding-top: 120px;
     padding-bottom: 120px;
 }
@@ -234,6 +239,17 @@ body {
     flex-basis: calc((100% - var(--card-set-gap) * 3) / 4);
 }
 
+
+.skills-svg-div {
+    width: 264px;
+    height: 112px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-mode-backgrounds);
+    border-radius: 4px;
+}
 
 .skills-title,
 .teams-title {
@@ -259,7 +275,7 @@ body {
 
 /* =========== What are we doing =========== */
 
-.projects .container {
+.projects {
     padding-bottom: 120px;
 }
 
@@ -291,13 +307,15 @@ body {
 
 /* =========== Our Team =========== */
 .teams {
+    padding-top: 120px;
+    padding-bottom: 120px;
+
     background-color: var(--light-mode-backgrounds);
 }
 
-.teams .container {
-    padding-top: 120px;
-    padding-bottom: 120px;
-}
+/* .teams .container {
+    outline: auto;
+} */
 
 .teams-list {
     display: flex;
@@ -314,36 +332,164 @@ body {
 }
 
 .team-card .card-content {
-    margin: 16px 32px;
-
+    padding: 32px 16px;
     text-align: center;
+}
+
+.teams-soc-list {
+    margin-top: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
 
 }
 
+.teams-link {
+    margin: 4px 0px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--primary-brand-color);
+}
+
+.teams-link:hover,
+.teams-link:focus {
+    background-color: var(--active-button-color);
+}
+
+/* =========== customer =========== */
+.customer .container {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    /* outline: auto; */
+}
+
+
+.customer-title {
+    text-align: center;
+    margin-bottom: 72px;
+
+    font-size: 36px;
+    line-height: calc(40/36);
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+    color: var(--dark-navy-blue);
+}
+
+.customer-list {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+}
+
+.customer-link {
+
+    box-sizing: border-box;
+    border: 1px solid var(--subtle-text);
+    border-radius: 4px;
+
+    width: 168px;
+    height: 88px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.customer-link:hover,
+.customer-link:focus {
+    border-color: var(--active-button-color);
+}
+
+.customer-link:hover .svg-icon-grey,
+.customer-link:focus .svg-icon-grey {
+    fill: var(--active-button-color);
+}
+
+.svg-icon-grey {
+    fill: var(--subtle-text);
+}
+
+
 /* =========== footer =========== */
 .footer {
+    padding-top: 100px;
+    padding-bottom: 100px;
+
     background: var(--dark-navy-blue);
 }
 
 .footer .container {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    display: flex;
+}
+
+.footer-soc-media {
+    margin-left: 120px;
+}
+
+.footer-soc-header {
+    margin-bottom: 16px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: calc(24/16);
+    /* identical to box height, or 150% */
+
+    letter-spacing: 0.02em;
+
+    color: var(--active-text-color);
 }
 
 .footer-link-logo-2 {
-    color: #F4F4FD;
+    color: var(--light-mode-backgrounds);
 }
 
 .footer-text {
     margin-top: 16px;
     max-width: 264px;
-    color: #E7E9FC;
+    color: var(--accent-color);
+}
+
+.footer-soc-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+}
+
+.footer-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.svg-icon-white {
+    fill: var(--active-text-color)
+}
+
+.footer-link:hover,
+.footer-link:focus {
+    background-color: var(--success-color);
 }
 
 /* =========== Portfolio  ===========*/
 
-.portfolio .container {
+.portfolio {
     padding-top: 96px;
+    padding-bottom: 120px;
 }
 
 .portfolio .skills-list {
@@ -352,7 +498,6 @@ body {
 
 .btn-portfolio {
     padding: 12px 24px;
-    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
     border-radius: 4px;
 
     font-family: 'Roboto', sans-serif;
@@ -363,7 +508,7 @@ body {
     letter-spacing: 0.04em;
     line-height: 1.5;
     color: var(--primary-brand-color);
-    background-color: #F4F4FD;
+    background-color: var(--light-mode-backgrounds);
 
 }
 
@@ -371,6 +516,7 @@ body {
 .btn-portfolio:focus {
     color: var(--active-text-color);
     background-color: var(--primary-brand-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
     line-height: 1.5;
 }
 
@@ -393,7 +539,7 @@ body {
 
 
 .post-content {
-    padding: 32px 0;
+    padding: 32px 16px;
     border-bottom: 1px solid var(--accent-color);
     border-left: 1px solid var(--accent-color);
     border-right: 1px solid var(--accent-color);
@@ -401,4 +547,17 @@ body {
 
 .portfolio-title {
     margin-bottom: 8px;
+
+    font-size: 20px;
+    line-height: calc(24/20);
+    letter-spacing: 0.02em;
+    color: var(--dark-navy-blue)
+}
+
+.portfolio-text {
+    font-size: 16px;
+    line-height: calc(24/16);
+    letter-spacing: 0.02em;
+
+    color: var(--primary-text-color);
 }
